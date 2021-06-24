@@ -8,7 +8,7 @@
         <div class="my-4 px-5">
         <div
           @click="$store.commit('increaseLikes')"
-          class="bg-white rounded-md p-6 my-3 shadow-primaryBtn hover:shadow-pressedBtn cursor-pointer"
+          class="bg-white rounded-md p-6 my-3 shadow-primaryIcon hover:shadow-pressedIcon cursor-pointer"
         >
           <img :src="reaction.icon" alt="" />
         </div>
@@ -23,7 +23,7 @@
       <div class="my-4 px-5">
         <div
           @click="$store.commit('increaseLikes')"
-          class="bg-white rounded-md p-6 my-3 shadow-primaryBtn hover:shadow-pressedBtn cursor-pointer"
+          class="bg-white rounded-md p-6 my-3 shadow-primaryIcon hover:shadow-pressedIcon cursor-pointer"
         >
           <img src="../assets/like.png" alt="" />
         </div>
@@ -37,7 +37,7 @@
       <div class="my-4 px-5">
         <div
           @click="$store.commit('increaseDislikes')"
-          class="bg-white rounded-md p-6 my-3 shadow-primaryBtn hover:shadow-pressedBtn cursor-pointer"
+          class="bg-white rounded-md p-6 my-3 shadow-primaryIcon hover:shadow-pressedIcon cursor-pointer"
         >
           <img src="../assets/dislike.png" alt="" />
         </div>
@@ -51,7 +51,7 @@
       <div class="my-4 px-5">
         <div
           @click="$store.commit('increaseHearts')"
-          class="bg-white rounded-md p-6 my-3 shadow-primaryBtn hover:shadow-pressedBtn cursor-pointer"
+          class="bg-white rounded-md p-6 my-3 shadow-primaryIcon hover:shadow-pressedIcon cursor-pointer"
         >
           <img src="../assets/heart.png" alt="" />
         </div>
@@ -65,7 +65,7 @@
       <div class="my-4 px-5">
         <div
           @click="$store.commit('increaseClaps')"
-          class="bg-white rounded-md p-6 my-3 shadow-primaryBtn hover:shadow-pressedBtn cursor-pointer"
+          class="bg-white rounded-md p-6 my-3 shadow-primaryIcon hover:shadow-pressedIcon cursor-pointer"
         >
           <img src="../assets/clapping.png" alt="" />
         </div>
@@ -79,7 +79,7 @@
       <div class="my-4 px-5">
         <div
           @click="$store.commit('increaseSmiles')"
-          class="bg-white rounded-md p-6 my-3 shadow-primaryBtn hover:shadow-pressedBtn cursor-pointer"
+          class="bg-white rounded-md p-6 my-3 shadow-primaryIcon hover:shadow-pressedIcon cursor-pointer"
         >
           <img src="../assets/happy.png" alt="" />
         </div>
@@ -93,7 +93,7 @@
       <div class="my-4 px-5">
         <div
           @click="$store.commit('increaseGrins')"
-          class="bg-white rounded-md p-6 my-3 shadow-primaryBtn hover:shadow-pressedBtn cursor-pointer"
+          class="bg-white rounded-md p-6 my-3 shadow-primaryIcon hover:shadow-pressedIcon cursor-pointer"
         >
           <img src="../assets/excited.png" alt="" />
         </div>
@@ -107,7 +107,7 @@
       <div class="my-4 px-5">
         <div
           @click="$store.commit('increaseRockets')"
-          class="bg-white rounded-md p-6 my-3 shadow-primaryBtn hover:shadow-pressedBtn cursor-pointer"
+          class="bg-white rounded-md p-6 my-3 shadow-primaryIcon hover:shadow-pressedIcon cursor-pointer"
         >
           <img src="../assets/rocket.png" alt="" />
         </div>
@@ -121,7 +121,7 @@
       <div class="my-4 px-5">
         <div
           @click="$store.commit('increaseSaddies')"
-          class="bg-white rounded-md p-6 my-3 shadow-primaryBtn hover:shadow-pressedBtn cursor-pointer"
+          class="bg-white rounded-md p-6 my-3 shadow-primaryIcon hover:shadow-pressedIcon cursor-pointer"
         >
           <img src="../assets/sad.png" alt="" />
         </div>

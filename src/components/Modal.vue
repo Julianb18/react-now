@@ -4,12 +4,18 @@
     class="fixed h-screen w-full top-0 bg-gray-900 bg-opacity-30 flex justify-center items-center "
   >
     <div class="bg-white -mt-48 py-5 px-10 rounded-md">
-      <form @submit.prevent class="flex flex-col">
+      <form @submit.prevent="closeModal" class="flex flex-col">
         <h3 class="text-3xl mb-6">Share your thoughts?</h3>
-        <textarea class="bg-gray-200 rounded-md p-2" type="text" rows="4" />
+        <textarea
+          v-model="thought"
+          class="bg-gray-200 rounded-md p-2"
+          type="text"
+          rows="4"
+        />
         <div>
           <button
-            class="bg-secondary text-white py-1 px-3 mt-4 rounded-md shadow-submitBtn hover:shadow-submitPressed"
+            @click="$store.commit('add_thoughts', thought)"
+            class="bg-primary text-white py-1 px-3 mt-4 rounded-md shadow-submitBtn hover:shadow-submitPressed"
           >
             Submit
           </button>
@@ -23,6 +29,11 @@
 import { defineComponent } from 'vue'
 
 export default defineComponent({
+  data() {
+    return {
+      thought: '',
+    }
+  },
   methods: {
     closeModal() {
       this.$emit('close')

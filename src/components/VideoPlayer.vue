@@ -15,12 +15,17 @@ import Player from '@vimeo/player'
 
 export default defineComponent({
   name: 'VideoPlayer',
-
+  methods: {
+    videoEnd() {
+      this.$emit('videoEnd')
+    },
+  },
   mounted() {
     const player = new Player('vid')
 
-    player.on('start', () => {
-      console.log('video has started')
+    player.on('ended', () => {
+      this.videoEnd()
+      console.log('video has ended')
     })
   },
 })

@@ -6,6 +6,9 @@
     <div v-if="showModal">
       <Modal @close="toggleModal" />
     </div>
+    <div v-for="thought in $store.state.thoughts" :key="thought.index">
+      <p>{{ thought }}</p>
+    </div>
   </div>
 </template>
 

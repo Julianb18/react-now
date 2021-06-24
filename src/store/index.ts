@@ -3,6 +3,7 @@ import { createStore } from 'vuex'
 export default createStore({
   state: {
     // store the data of our app
+    thoughts: [] as String[],
     counters: {
       likes: localStorage.getItem('likes')
         ? Number(localStorage.getItem('likes'))
@@ -63,7 +64,7 @@ export default createStore({
     //     reaction: 'awesome',
     //     icon: require('../assets/rocket.png'),
     //   },
-    //   {
+    //   {any
     //     id: 8,
     //     reaction: 'sad',
     //     icon: require('../assets/sad.png'),
@@ -73,6 +74,9 @@ export default createStore({
   mutations: {
     // TODO: Find away to make this and state above more dynamic
     // methods which change data in the state
+    add_thoughts(state, thought: String) {
+      state.thoughts = [...state.thoughts, thought]
+    },
     increaseLikes(state) {
       state.counters.likes++
       window.localStorage.setItem('likes', JSON.stringify(state.counters.likes))

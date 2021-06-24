@@ -1,10 +1,6 @@
 <template>
-  <div
-    class="mt-5 border border-blue-700 w-full h-80 flex justify-center items-center"
-  >
-    <div class="">
-      <div data-vimeo-id="483349301" data-vimeo-width="640" id="vid"></div>
-    </div>
+  <div class="mt-5 border w-full flex justify-center items-center">
+    <div data-vimeo-id="483349301" data-vimeo-width="640" id="vid"></div>
   </div>
 </template>
 

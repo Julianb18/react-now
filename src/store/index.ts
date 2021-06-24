@@ -37,6 +37,7 @@ export default createStore({
     //     id: 1,
     //     reaction: 'thumbsUp',
     //     icon: require('../assets/like.png'),
+    //
     //   },
     //   {
     //     id: 2,

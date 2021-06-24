@@ -2,7 +2,7 @@
   <div class="h-screen bg-gray-200">
     <h1 class="pt-3 text-5xl font-bold">React Now</h1>
     <VideoPlayer @videoEnd="toggleModal" />
-    <Reactions />
+    <ReactionList />
     <div v-if="showModal">
       <Modal @close="toggleModal" />
     </div>
@@ -14,7 +14,7 @@
 
 <script lang="ts">
 import VideoPlayer from './components/VideoPlayer.vue'
-import Reactions from './components/Reactions.vue'
+import ReactionList from './components/ReactionList.vue'
 import Modal from './components/Modal.vue'
 
 import { defineComponent } from 'vue'
@@ -22,7 +22,7 @@ import { defineComponent } from 'vue'
 export default defineComponent({
   components: {
     VideoPlayer,
-    Reactions,
+    ReactionList,
     Modal,
   },
 

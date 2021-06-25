@@ -1,11 +1,13 @@
 <template>
-  <main class="min-h-screen  bg-gray-200 lg:py-4 lg:px-8">
-    <h1 class="text-secondary text-center pt-3 text-5xl font-bold">
-      React Now
-    </h1>
+  <main class="min-h-screen  bg-gray-200 ">
+    <header class="bg-primary text-white text-center p-3 text-5xl font-bold">
+      <h1 class="text-5xl font-bold">
+        React Now
+      </h1>
+    </header>
     <div
       class="flex lg:flex-row sm:flex-col items-center
-      lg:items-start justify-center  px-8 py-5 "
+      lg:items-start justify-center px-8 py-5 "
     >
       <div class="">
         <VideoPlayer @videoEnd="toggleModal" />

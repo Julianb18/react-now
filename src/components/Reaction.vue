@@ -24,3 +24,13 @@ export default defineComponent({
   },
 })
 </script>
+
+<style scoped>
+img {
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+</style>

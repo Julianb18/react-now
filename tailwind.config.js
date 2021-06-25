@@ -26,7 +26,14 @@ module.exports = {
     },
   },
   variants: {
-    extend: {},
+    extend: {
+      backgroundColor: ['active'],
+      transform: ['active'],
+      scale: ['active'],
+      transitionDuration: ['active'],
+      opacity: ['active'],
+      boxShadow: ['active'],
+    },
   },
   plugins: [],
 }

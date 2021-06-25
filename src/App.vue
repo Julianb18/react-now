@@ -10,6 +10,7 @@
       lg:items-start justify-center px-8 py-5 "
     >
       <div class="">
+        <!-- @videoEnd is being emitted from videoPlayer component -->
         <VideoPlayer @videoEnd="toggleModal" />
         <ReactionList />
       </div>
@@ -20,6 +21,7 @@
       </div>
     </div>
     <div v-if="showModal">
+      <!-- @close is being emitted from modal -->
       <Modal @close="toggleModal" />
     </div>
   </main>

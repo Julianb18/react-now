@@ -1,6 +1,6 @@
 <template>
-  <div class="border flex justify-center ">
-    <div class=" flex flex-wrap justify-center my-10 border-2 max-w-lg">
+  <div class="flex justify-center ">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-2 mt-3">
       <!-- <div v-for="reaction in $store.state.reactionList" :key="reaction.id">
       this will wrap one ov the divs to dynamically load them
         <div class="my-4 px-5">
@@ -48,14 +48,14 @@
         clickEvent="increaseGrins"
       />
       <Reaction
-        :imgUrl="require('../assets/rocket.png')"
-        :counter="$store.state.counters.rockets"
-        clickEvent="increaseRockets"
-      />
-      <Reaction
         :imgUrl="require('../assets/sad.png')"
         :counter="$store.state.counters.saddies"
         clickEvent="increaseSaddies"
+      />
+      <Reaction
+        :imgUrl="require('../assets/rocket.png')"
+        :counter="$store.state.counters.rockets"
+        clickEvent="increaseRockets"
       />
     </div>
   </div>

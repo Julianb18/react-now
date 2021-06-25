@@ -1,5 +1,5 @@
 <template>
-  <div class="h-screen bg-gray-200">
+  <div class="min-h-screen bg-gray-200">
     <h1 class="pt-3 text-5xl font-bold">React Now</h1>
     <VideoPlayer @videoEnd="toggleModal" />
     <ReactionList />

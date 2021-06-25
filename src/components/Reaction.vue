@@ -1,8 +1,8 @@
 <template>
-  <div class="my-4 px-5">
+  <div class="reaction my-4 mx-5">
     <div
       @click="$store.commit(clickEvent)"
-      class="bg-white rounded-md p-6 my-3 shadow-primaryIcon hover:shadow-pressedIcon cursor-pointer"
+      class="bg-white rounded-md p-8 my-3 shadow-primaryIcon hover:shadow-pressedIcon cursor-pointer"
     >
       <img :src="imgUrl" alt="" />
     </div>
@@ -25,8 +25,16 @@ export default defineComponent({
 })
 </script>
 
-<style scoped>
-img {
+<style>
+.reaction img {
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.reaction span {
   -webkit-user-select: none;
   -webkit-touch-callout: none;
   -moz-user-select: none;

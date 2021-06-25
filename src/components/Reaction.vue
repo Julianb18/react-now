@@ -4,7 +4,7 @@
     <div
       @click="$store.commit(clickEvent)"
       class="iconContainer bg-white rounded-md p-8 my-3 shadow-primaryIcon active:shadow-pressedIcon 
-      transform transition duration-500 ease-in-out  cursor-pointer"
+       cursor-pointer"
     >
       <img class="" :src="imgUrl" alt="" />
     </div>

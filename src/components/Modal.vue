@@ -12,7 +12,7 @@
           type="text"
           rows="4"
         />
-        <div>
+        <div class="flex justify-center">
           <button
             @click="$store.commit('add_thoughts', thought)"
             class="bg-primary text-white py-1 px-3 mt-4 rounded-md shadow-submitBtn hover:shadow-submitPressed"

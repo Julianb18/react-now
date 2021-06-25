@@ -3,9 +3,9 @@
 This is my submission of the Vue.js challenge.
 
 #### I used two open source plugins:
-[vimeo/player](https://www.npmjs.com/package/@vimeo/player) - which I used to display the video.
-also
-[vue-window-size](https://www.npmjs.com/package/vue-window-size) - which I used to get the window size of the app.
+[vimeo/player](https://www.npmjs.com/package/@vimeo/player) - which I used to display the video.<br/>
+aswell as<br/>
+[vue-window-size](https://www.npmjs.com/package/vue-window-size) - which I used to get the window size of the app.<br/>
 
 ## Project setup
 ```

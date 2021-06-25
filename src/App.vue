@@ -1,20 +1,32 @@
 <template>
-  <div class="min-h-screen bg-gray-200">
-    <h1 class="pt-3 text-5xl font-bold">React Now</h1>
-    <VideoPlayer @videoEnd="toggleModal" />
-    <ReactionList />
+  <main class="min-h-screen  bg-gray-200 lg:py-4 lg:px-8">
+    <h1 class="text-secondary text-center pt-3 text-5xl font-bold">
+      React Now
+    </h1>
+    <div
+      class="flex lg:flex-row sm:flex-col items-center
+      lg:items-start justify-center  px-8 py-5 "
+    >
+      <div class="">
+        <VideoPlayer @videoEnd="toggleModal" />
+        <ReactionList />
+      </div>
+      <div
+        class=" mt-6 min-h-full max-w-xl md:w-xl lg:w-60  lg:ml-10 2lg:-mr-60"
+      >
+        <Thoughts />
+      </div>
+    </div>
     <div v-if="showModal">
       <Modal @close="toggleModal" />
     </div>
-    <div v-for="thought in $store.state.thoughts" :key="thought.index">
-      <p>{{ thought }}</p>
-    </div>
-  </div>
+  </main>
 </template>
 
 <script lang="ts">
 import VideoPlayer from './components/VideoPlayer.vue'
 import ReactionList from './components/ReactionList.vue'
+import Thoughts from './components/Thoughts.vue'
 import Modal from './components/Modal.vue'
 
 import { defineComponent } from 'vue'
@@ -24,6 +36,7 @@ export default defineComponent({
     VideoPlayer,
     ReactionList,
     Modal,
+    Thoughts,
   },
 
   data() {
@@ -45,7 +58,7 @@ export default defineComponent({
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
+
   color: #2c3e50;
 }
 </style>

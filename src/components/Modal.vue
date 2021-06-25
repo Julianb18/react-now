@@ -1,7 +1,7 @@
 <template>
   <div
     @click.self="closeModal"
-    class="fixed h-screen w-full top-0 bg-gray-900 bg-opacity-30 flex justify-center items-center "
+    class="fixed h-screen w-full top-0 left-0 bg-gray-900 bg-opacity-30 flex justify-center items-center "
   >
     <div class="bg-white -mt-48 py-5 px-10 rounded-md">
       <form @submit.prevent="closeModal" class="flex flex-col">

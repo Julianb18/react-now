@@ -6,7 +6,9 @@
     >
       <img :src="imgUrl" alt="" />
     </div>
-    <span class="bg-white p-1 block rounded-md font-bold text-primary">
+    <span
+      class="bg-white p-1 block rounded-md font-bold text-primary text-center"
+    >
       {{ counter }}
     </span>
   </div>

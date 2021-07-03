@@ -2,7 +2,7 @@
   <div class="reaction my-4 mx-5">
     <!-- clickevent is being passed in as a string from reactionList -->
     <div
-      @click="$store.commit(clickEvent)"
+      @click="$store.commit(clickEvent, reactionId)"
       class="iconContainer bg-white rounded-md p-8 my-3 shadow-primaryIcon active:shadow-pressedIcon 
        cursor-pointer"
     >
@@ -22,6 +22,8 @@ import { defineComponent } from 'vue'
 export default defineComponent({
   name: 'Reaction',
   props: {
+    info: Object,
+    reactionId: Number,
     imgUrl: String,
     counter: Number,
     clickEvent: String,

@@ -16,47 +16,16 @@
       </div>
       </div> -->
 
-      <!-- TODO: make this code more dynamic like above  -->
-      <Reaction
-        :imgUrl="require('../assets/like.png')"
-        :counter="$store.state.counters.likes"
-        clickEvent="increaseLikes"
-      />
-      <Reaction
-        :imgUrl="require('../assets/dislike.png')"
-        :counter="$store.state.counters.dislikes"
-        clickEvent="increaseDislikes"
-      />
-      <Reaction
-        :imgUrl="require('../assets/heart.png')"
-        :counter="$store.state.counters.hearts"
-        clickEvent="increaseHearts"
-      />
-      <Reaction
-        :imgUrl="require('../assets/clapping.png')"
-        :counter="$store.state.counters.claps"
-        clickEvent="increaseClaps"
-      />
-      <Reaction
-        :imgUrl="require('../assets/happy.png')"
-        :counter="$store.state.counters.smiles"
-        clickEvent="increaseSmiles"
-      />
-      <Reaction
-        :imgUrl="require('../assets/excited.png')"
-        :counter="$store.state.counters.grins"
-        clickEvent="increaseGrins"
-      />
-      <Reaction
-        :imgUrl="require('../assets/sad.png')"
-        :counter="$store.state.counters.saddies"
-        clickEvent="increaseSaddies"
-      />
-      <Reaction
-        :imgUrl="require('../assets/rocket.png')"
-        :counter="$store.state.counters.rockets"
-        clickEvent="increaseRockets"
-      />
+      <div v-for="reaction in $store.state.reactionList" :key="reaction.id">
+        {{ log(reaction) }}
+        <Reaction
+          :info="reaction"
+          :reactionId="reaction.id"
+          :imgUrl="reaction.icon"
+          :counter="reaction.counter"
+          clickEvent="INCREMENT"
+        />
+      </div>
     </div>
   </div>
 </template>
@@ -70,6 +39,12 @@ export default defineComponent({
   name: 'ReactionList',
   components: {
     Reaction,
+  },
+
+  methods: {
+    log(message: any) {
+      console.log(message)
+    },
   },
 })
 </script>

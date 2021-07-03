@@ -4,128 +4,92 @@ export default createStore({
   state: {
     // store the data of our app
     thoughts: [] as String[],
-    counters: {
-      likes: localStorage.getItem('likes')
-        ? Number(localStorage.getItem('likes'))
-        : 0,
-      dislikes: localStorage.getItem('dislikes')
-        ? Number(localStorage.getItem('dislikes'))
-        : 0,
-      hearts: localStorage.getItem('hearts')
-        ? Number(localStorage.getItem('hearts'))
-        : 0,
-      claps: localStorage.getItem('claps')
-        ? Number(localStorage.getItem('claps'))
-        : 0,
-      smiles: localStorage.getItem('smiles')
-        ? Number(localStorage.getItem('smiles'))
-        : 0,
-      grins: localStorage.getItem('grins')
-        ? Number(localStorage.getItem('grins'))
-        : 0,
-      rockets: localStorage.getItem('rockets')
-        ? Number(localStorage.getItem('rockets'))
-        : 0,
-      saddies: localStorage.getItem('saddies')
-        ? Number(localStorage.getItem('saddies'))
-        : 0,
-    },
+    reactionList: [
+      {
+        id: 1,
+        reaction: 'like',
+        icon: require('../assets/like.png'),
+        counter: localStorage.getItem('like')
+          ? Number(localStorage.getItem('like'))
+          : 0,
+      },
+      {
+        id: 2,
+        reaction: 'dislike',
+        icon: require('../assets/dislike.png'),
+        counter: localStorage.getItem('dislike')
+          ? Number(localStorage.getItem('dislike'))
+          : 0,
+      },
+      {
+        id: 3,
+        reaction: 'heart',
+        icon: require('../assets/heart.png'),
+        counter: localStorage.getItem('heart')
+          ? Number(localStorage.getItem('heart'))
+          : 0,
+      },
+      {
+        id: 4,
+        reaction: 'clap',
+        icon: require('../assets/clapping.png'),
+        counter: localStorage.getItem('clap')
+          ? Number(localStorage.getItem('clap'))
+          : 0,
+      },
+      {
+        id: 5,
+        reaction: 'smile',
+        icon: require('../assets/happy.png'),
+        counter: localStorage.getItem('smile')
+          ? Number(localStorage.getItem('smile'))
+          : 0,
+      },
 
-    // TODO: find a way to get the icon data from store
-    // reactionList: [
-    //   {
-    //     id: 1,
-    //     reaction: 'thumbsUp',
-    //     icon: require('../assets/like.png'),
-    //
-    //   },
-    //   {
-    //     id: 2,
-    //     reaction: 'thumbsDown',
-    //     icon: require('../assets/dislike.png'),
-    //   },
-    //   {
-    //     id: 3,
-    //     reaction: 'heart',
-    //     icon: require('../assets/heart.png'),
-    //   },
-    //   {
-    //     id: 4,
-    //     reaction: 'clap',
-    //     icon: require('../assets/clapping.png'),
-    //   },
-    //   { id: 5, reaction: 'happy', icon: require('../assets/happy.png') },
-    //   {
-    //     id: 6,
-    //     reaction: 'excited',
-    //     icon: require('../assets/excited.png'),
-    //   },
-    //   {
-    //     id: 7,
-    //     reaction: 'awesome',
-    //     icon: require('../assets/rocket.png'),
-    //   },
-    //   {any
-    //     id: 8,
-    //     reaction: 'sad',
-    //     icon: require('../assets/sad.png'),
-    //   },
-    // ],
+      {
+        id: 6,
+        reaction: 'grin',
+        icon: require('../assets/excited.png'),
+        counter: localStorage.getItem('grin')
+          ? Number(localStorage.getItem('grin'))
+          : 0,
+      },
+      {
+        id: 7,
+        reaction: 'rocket',
+        icon: require('../assets/rocket.png'),
+        counter: localStorage.getItem('rocket')
+          ? Number(localStorage.getItem('rocket'))
+          : 0,
+      },
+      {
+        id: 8,
+        reaction: 'sad',
+        icon: require('../assets/sad.png'),
+        counter: localStorage.getItem('sad')
+          ? Number(localStorage.getItem('sad'))
+          : 0,
+      },
+    ],
   },
   mutations: {
-    // TODO: Find away to make this and state above more dynamic
     // methods which change data in the state
+
+    INCREMENT(state, payload) {
+      const reaction = state.reactionList.find(
+        (reaction) => reaction.id === payload
+      )
+      if (!reaction) {
+        return state
+      }
+      const name = reaction.reaction
+      reaction.counter++
+      window.localStorage.setItem(name, JSON.stringify(reaction.counter))
+    },
 
     // pass thought as a payload
     add_thoughts(state, thought: String) {
       state.thoughts = [...state.thoughts, thought]
-    },
-    increaseLikes(state) {
-      state.counters.likes++
-      window.localStorage.setItem('likes', JSON.stringify(state.counters.likes))
-    },
-    increaseDislikes(state) {
-      state.counters.dislikes++
-      window.localStorage.setItem(
-        'dislikes',
-        JSON.stringify(state.counters.dislikes)
-      )
-    },
-    increaseHearts(state) {
-      state.counters.hearts++
-      window.localStorage.setItem(
-        'hearts',
-        JSON.stringify(state.counters.hearts)
-      )
-    },
-    increaseClaps(state) {
-      state.counters.claps++
-      window.localStorage.setItem('claps', JSON.stringify(state.counters.claps))
-    },
-    increaseSmiles(state) {
-      state.counters.smiles++
-      window.localStorage.setItem(
-        'smiles',
-        JSON.stringify(state.counters.smiles)
-      )
-    },
-    increaseGrins(state) {
-      state.counters.grins++
-      window.localStorage.setItem('grins', JSON.stringify(state.counters.grins))
-    },
-    increaseRockets(state) {
-      state.counters.rockets++
-      window.localStorage.setItem(
-        'rockets',
-        JSON.stringify(state.counters.rockets)
-      )
-    },
-    increaseSaddies(state) {
-      state.counters.saddies++
-      window.localStorage.setItem(
-        'saddies',
-        JSON.stringify(state.counters.saddies)
-      )
     },
   },
 })

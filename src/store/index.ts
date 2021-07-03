@@ -3,7 +3,7 @@ import { createStore } from 'vuex'
 export default createStore({
   state: {
     // store the data of our app
-    thoughts: [] as String[],
+    thoughts: [] as Object[],
     reactionList: [
       {
         id: 1,

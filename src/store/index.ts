@@ -89,7 +89,7 @@ export default createStore({
     },
 
     // pass thought as a payload
-    add_thoughts(state, thought: String) {
+    ADD_THOUGHTS(state, thought: String) {
       state.thoughts = [...state.thoughts, thought]
     },
   },

@@ -5,7 +5,7 @@
     class="fixed h-screen w-full top-0 left-0 bg-gray-900 bg-opacity-30 flex justify-center items-center "
   >
     <div class="bg-white -mt-48 py-5 px-10 rounded-md">
-      <!-- passing payload thought to add_thoughts -->
+      <!-- passing payload thought to ADD_THOUGHTS -->
       <form @submit.prevent="submitHandler(thought)" class="flex flex-col">
         <h3 class="text-3xl mb-6">Share your thoughts?</h3>
         <textarea
@@ -38,8 +38,8 @@ export default defineComponent({
     }
   },
   methods: {
-    // get access to the add_thoughts handler from store
-    ...mapMutations(['add_thoughts']),
+    // get access to the ADD_THOUGHTS handler from store
+    ...mapMutations(['ADD_THOUGHTS']),
 
     closeModal() {
       this.$emit('close')
@@ -47,7 +47,7 @@ export default defineComponent({
 
     submitHandler(thought: string) {
       this.closeModal()
-      this.add_thoughts(thought)
+      this.ADD_THOUGHTS(thought)
     },
   },
 })

@@ -24,11 +24,5 @@ export default defineComponent({
   components: {
     Reaction,
   },
-
-  methods: {
-    log(message: any) {
-      console.log(message)
-    },
-  },
 })
 </script>

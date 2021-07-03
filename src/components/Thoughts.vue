@@ -53,10 +53,10 @@ export default defineComponent({
   },
 
   methods: {
-    ...mapMutations(['add_thoughts']),
+    ...mapMutations(['ADD_THOUGHTS']),
 
     addHandler(thought: string) {
-      this.add_thoughts(thought)
+      this.ADD_THOUGHTS(thought)
       this.thought = ''
     },
   },

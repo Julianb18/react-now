@@ -56,18 +56,18 @@ export default createStore({
       },
       {
         id: 7,
-        reaction: 'rocket',
-        icon: require('../assets/rocket.png'),
-        counter: localStorage.getItem('rocket')
-          ? Number(localStorage.getItem('rocket'))
-          : 0,
-      },
-      {
-        id: 8,
         reaction: 'sad',
         icon: require('../assets/sad.png'),
         counter: localStorage.getItem('sad')
           ? Number(localStorage.getItem('sad'))
+          : 0,
+      },
+      {
+        id: 8,
+        reaction: 'rocket',
+        icon: require('../assets/rocket.png'),
+        counter: localStorage.getItem('rocket')
+          ? Number(localStorage.getItem('rocket'))
           : 0,
       },
     ],
@@ -75,6 +75,7 @@ export default createStore({
   mutations: {
     // methods which change data in the state
 
+    // passing id off a reaction as payload
     INCREMENT(state, payload) {
       const reaction = state.reactionList.find(
         (reaction) => reaction.id === payload

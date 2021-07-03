@@ -5,6 +5,7 @@
     class="fixed h-screen w-full top-0 left-0 bg-gray-900 bg-opacity-30 flex justify-center items-center "
   >
     <div class="bg-white -mt-48 py-5 px-10 rounded-md">
+      <!-- passing payload thought to add_thoughts -->
       <form @submit.prevent="submitHandler(thought)" class="flex flex-col">
         <h3 class="text-3xl mb-6">Share your thoughts?</h3>
         <textarea
@@ -14,7 +15,6 @@
           rows="4"
         />
         <div class="flex justify-center">
-          <!-- $store.commit is invoking the add_thoughts handler with the payload thought-->
           <button
             @click="submitHandler(thought)"
             class="bg-primary text-white py-1 px-3 mt-4 rounded-md shadow-submitBtn hover:shadow-submitPressed"
@@ -38,12 +38,14 @@ export default defineComponent({
     }
   },
   methods: {
+    // get access to the add_thoughts handler from store
     ...mapMutations(['add_thoughts']),
+
     closeModal() {
       this.$emit('close')
     },
 
-    submitHandler(thought: any) {
+    submitHandler(thought: string) {
       this.closeModal()
       this.add_thoughts(thought)
     },

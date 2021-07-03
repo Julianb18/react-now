@@ -10,7 +10,7 @@
     >
       <p>Add your thoughts after the video has ended...</p>
     </div>
-    <!-- thought.index not good practice and can get buggy if I want to add remove thought function-->
+    <!-- thought.index not good practice and will get buggy if I want to add remove thought function-->
     <!-- TODO:implement remove thought -->
     <div v-else v-for="thought in $store.state.thoughts" :key="thought.index">
       <div

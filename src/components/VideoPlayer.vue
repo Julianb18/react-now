@@ -1,38 +1,13 @@
 <template>
   <div class="mt-5 border w-full flex justify-center items-center">
-    <!-- <div v-if="vidWidth === 260">
-      <div
-        data-vimeo-id="483349301"
-        data-vimeo-width="260"
-        responsive="true"
-        id="vid"
-      ></div>
-    </div>
-    <div v-else-if="vidWidth === 450">
-      <div
-        data-vimeo-id="483349301"
-        data-vimeo-width="450"
-        responsive="true"
-        id="vid"
-      ></div>
-    </div>
-    <div v-else>
-      <div
-        data-vimeo-id="483349301"
-        data-vimeo-width="640"
-        responsive="true"
-        id="vid"
-      ></div>
-    </div> -->
     <div
+      class="videoContainer"
       data-vimeo-id="483349301"
-      :data-vimeo-width="vidWidth"
+      :data-vimeo-width="640"
       responsive="true"
       id="vid"
     ></div>
   </div>
-  <p class="text-center">video width: {{ vidWidth }}</p>
-  <p class="text-center">window width: {{ $windowWidth }}</p>
 </template>
 
 <script lang="ts">
@@ -51,19 +26,6 @@ export default defineComponent({
     videoEnd() {
       this.$emit('videoEnd')
     },
-
-    // checking the window width and setting vidWidth according to the window width
-    dynamicWidth() {
-      if (this.$windowWidth <= 650) {
-        return (this.vidWidth = 260)
-      } else if (this.$windowWidth >= 650) {
-        return (this.vidWidth = 450)
-      }
-    },
-  },
-
-  created() {
-    window.addEventListener('resize', this.dynamicWidth)
   },
 
   mounted() {
@@ -74,8 +36,23 @@ export default defineComponent({
       console.log('video has ended')
     })
   },
-  destroyed() {
-    window.removeEventListener('resize', this.dynamicWidth)
-  },
 })
 </script>
+
+<style>
+.videoContainer iframe {
+  width: 280px;
+}
+
+@media screen and (min-width: 680px) {
+  .videoContainer iframe {
+    width: 480px;
+  }
+
+  @media screen and (min-width: 820px) {
+    .videoContainer iframe {
+      width: 640px;
+    }
+  }
+}
+</style>

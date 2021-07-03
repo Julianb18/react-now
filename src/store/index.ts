@@ -75,6 +75,8 @@ export default createStore({
   mutations: {
     // TODO: Find away to make this and state above more dynamic
     // methods which change data in the state
+
+    // pass thought as a payload
     add_thoughts(state, thought: String) {
       state.thoughts = [...state.thoughts, thought]
     },
